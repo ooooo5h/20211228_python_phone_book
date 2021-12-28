@@ -2,6 +2,8 @@
 # 해당 함수들을 import해서 사용하자
 from phone_book import print_menu
 
+from time import sleep
+
 # 메뉴에서 0번을 입력할 때 까지 계속해서 입력을 받고 싶다.
 # 언제 입력할지 몰라 => while True => 0번이 들어오면 반복 종료하게끔
 while True:
@@ -21,5 +23,6 @@ while True:
         pass
     else:
         # 0,1,2가 아니면 잘못된 숫자 들어왔다는 안내 메세지 띄우기
-        print('잘못된 입력입니다. 다시 입력해주세요.')
+        print('잘못된 입력입니다. 다시 입력해주세요.')    # 참고 - 이 문장이 출력되고 나서, 2초정도 대기 후 다음 문장을 실행하고 싶다
+        sleep(2)    # time모듈의 sleep 기능 활용
     

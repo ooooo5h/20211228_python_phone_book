@@ -2,4 +2,15 @@
 # 해당 함수들을 import해서 사용하자
 from phone_book import print_menu
 
-print_menu()
+# 메뉴에서 0번을 입력할 때 까지 계속해서 입력을 받고 싶다.
+# 언제 입력할지 몰라 => while True => 0번이 들어오면 반복 종료하게끔
+while True:
+    # 실행 결과로 어떤 숫자를 넣었는가? 받을 수 있다.
+    num = print_menu()
+
+    # num에 어떤 숫자가 담겼는가? 다른 행동(기능) 수행
+    # 0번 : 프로그램 종료 => 우선 작업
+    if num == 0:
+        print('프로그램을 종료합니다.')
+        break           # 무한반복 탈출해야 프로그램이 종료됨
+    

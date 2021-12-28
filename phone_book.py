@@ -9,7 +9,7 @@ def print_menu():
     print('2. 전화번호 목록 조회')
     print('0. 프로그램 종료')
     print('=======================')
-    input_num = int( '원하는 메뉴를 선택하세요 : ')
+    input_num = int(input( '원하는 메뉴를 선택하세요 : '))
     
     # 입력한 결과를 함수의 결과로 return
     return input_num

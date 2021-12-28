@@ -14,8 +14,7 @@ while True:
         show_all_phone_num()
     
     elif num == 3:
-        # 새로 추가된 remove_al 함수 실행
-        remove_all()  # 3번 누르면 모든 번호 삭제하는 기능    
+        remove_all() 
         
     elif num == 4:
         search_and_view_contact()  

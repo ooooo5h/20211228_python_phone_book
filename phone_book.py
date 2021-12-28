@@ -1,5 +1,6 @@
 from time import sleep
 
+from datas import ContactInfo
 # 실질적인 동작 관련 코드들을 함수로 갖고있는 파일(모듈)
 
 
@@ -48,4 +49,6 @@ def show_all_phone_num():
         # 임시 : 리스트를 하나하나 출력해보자(반복문)
         for line in line_list:
             line = line.strip()  # 마지막 줄바꿈 제거
-            print(line)
+            # print(line)   # 읽은 줄을 그대로 출력 X
+            
+            # 연락처 정보를 표현하는 클래스 제작 => (가공해서 출력하는) 기능으로 구현

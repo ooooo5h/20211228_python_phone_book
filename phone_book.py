@@ -69,4 +69,9 @@ def search_and_view_contact():
             # 불러낸 한 줄이 '이름,' 을 가지고 있는가? => 그래야지 메모에 이름 이 반복되도 중복으로 안찾게끔!!    => in 연산자 활용
             if f'{search_name},' in line:
                 # 검색 이름을 들고 있는 line만 출력
-               print(line)
+                
+                infos = line.split(',')
+                
+                # 찾아낸 line이용해서 연락처 상세보기 => (클래스 메쏘드를 추가)
+                contacnt = ContactInfo(infos[0], infos[1], infos[2])
+                contacnt.print_contact_info()

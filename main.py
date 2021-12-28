@@ -4,9 +4,11 @@ from time import sleep
 while True:
     num = print_menu()
 
+    # 0 누르면 프로그램 종료
     if num == 0:
         print('프로그램을 종료합니다.')
         break           
+    # 1 누르면 전화번호 추가
     elif num == 1:
         add_phone_num()        
         

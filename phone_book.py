@@ -6,6 +6,7 @@ def print_menu():
     print('1. 전화번호 등록')
     print('2. 전화번호 목록 조회')
     print('3. 모든 연락처 삭제')
+    print('4. 연락처 상세 조회')
     print('0. 프로그램 종료')
     print('=======================')
     input_num = int(input( '원하는 메뉴를 선택하세요 : '))
@@ -51,3 +52,29 @@ def remove_all():
     # 삭제 완료되었다는 안내메세지 2초간 출력
     print('모든 기록이 삭제되었습니다.')
     sleep(2)
+    
+# 상세보기 -> 이름을 기반으로 검색(전체 연락처 목록에서 )
+def search_and_view_contact():
+    print('----- 사용자 검색 -----')
+    search_name = input('조회할 사용자 이름 : ')
+    
+    # 모든 연락처 목록을 불러내야함 => 파일 다시 조회
+    with open('phone_book.csv', 'r') as file:
+        line_list = file.readlines()
+        
+        for line in line_list:
+            line = line.strip()
+            
+            # 실제로 해야할 것 : 사용자 이름이 정말 들어있는가? 검색 구현하자
+            # 불러낸 한 줄이 '이름,' 을 가지고 있는가? => 그래야지 메모에 이름 이 반복되도 중복으로 안찾게끔!!    => in 연산자 활용
+            if f'{search_name},' in line:
+                # 검색 이름을 들고 있는 line만 출력
+                
+                infos = line.split(',')
+                
+                # 찾아낸 line이용해서 연락처 상세보기 => (클래스 메쏘드를 추가)
+                contacnt = ContactInfo(infos[0], infos[1], infos[2])
+                
+                # 상세보기 기능 활용
+                contacnt.print_contact_info_deteail()
+                sleep(2)

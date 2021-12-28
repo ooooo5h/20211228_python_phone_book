@@ -39,3 +39,11 @@ def show_all_phone_num():
             contact.print_contact_info()
             
         sleep(2)
+        
+
+# phone_book.csv 파일의 모든 내용을 삭제해주는 함수
+def remove_all():
+    # 기존 파일을 불러내서 => 내용물 전부 삭제
+    # 파일을 새로 만들어주자 w모드로 불러내보자
+    with open('phone_book.csv', 'w') as f:
+        pass   # w모드로 불러내면, 기존 내용 삭제처리되니까!!  그 뒤의 일은 없어도 됨

@@ -74,4 +74,7 @@ def search_and_view_contact():
                 
                 # 찾아낸 line이용해서 연락처 상세보기 => (클래스 메쏘드를 추가)
                 contacnt = ContactInfo(infos[0], infos[1], infos[2])
-                contacnt.print_contact_info()
+                
+                # 상세보기 기능 활용
+                contacnt.print_contact_info_deteail()
+                sleep(2)

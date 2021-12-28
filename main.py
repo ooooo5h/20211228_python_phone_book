@@ -12,7 +12,9 @@ while True:
         
     elif num == 2:
         show_all_phone_num()
-        
+    
+    elif num == 3:
+        pass  # 3번 누르면 모든 번호 삭제하는 기능    
     else:
         print('잘못된 입력입니다. 다시 입력해주세요.')    
         sleep(2)    

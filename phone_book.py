@@ -7,6 +7,7 @@ def print_menu():
     print('2. 전화번호 목록 조회')
     print('3. 모든 연락처 삭제')
     print('4. 연락처 상세 조회')
+    print('5. 특정 연락처 삭제')
     print('0. 프로그램 종료')
     print('=======================')
     input_num = int(input( '원하는 메뉴를 선택하세요 : '))
@@ -68,3 +69,11 @@ def search_and_view_contact():
                 
                 contacnt.print_contact_info_deteail()
                 sleep(2)
+                
+                
+# 특정 연락처 삭제 : 몇번째 연락처를 지울건지 입력을 받고, 그 위치에 맞는 연락처를 삭제해보자
+def remove_contact_by_position():
+    # 지우고 싶은 위치를 입력받자
+    position = int(input('몇번째 연락처를 삭제하겠습니까? (1부터 입력하세요.) : '))
+    
+    # 그 위치의 연락처가 누구인지? 이름을 꺼내고, 이 사람이 맞는 지 확인을 받자

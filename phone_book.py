@@ -77,3 +77,14 @@ def remove_contact_by_position():
     position = int(input('몇번째 연락처를 삭제하겠습니까? (1부터 입력하세요.) : '))
     
     # 그 위치의 연락처가 누구인지? 이름을 꺼내고, 이 사람이 맞는 지 확인을 받자
+    
+    # 입력값 보정 - 실제 파일의 목록에서는 0번부터 시작하니까, -1 해줘야 같음
+    position-= 1
+    
+    with open('phone_book.csv', 'r') as f:
+        # readlines활용해서 한 줄씩 목록으로 받아오자
+        contact_list = f.readlines()
+        
+        # 특정 위치의 연락처만 다루자 => 인덱스 활용
+        target_contact = contact_list[position]
+        print(target_contact)

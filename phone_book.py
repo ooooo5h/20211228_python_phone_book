@@ -87,6 +87,7 @@ def remove_contact_by_position():
         
         # 범위를 벗어나는 위치를 입력해서 생긴 오류 => 해당 위치의 연락처는 없습니다. 라고 문구 띄우고, 메뉴로 돌려보내는 작업 추가
         ###### 왜 len(contact_list) 인지 이해못했음
+        # >>>> 이유 : f.readlines()으로 불러와서 contact_list에는 리스트가 담겨있다. 그 길이를 넘는 인덱스가 들어오면 out of boundary
         if position >= len(contact_list) or position < 0:
             print('해당 위치의 연락처는 없습니다.')
             # 연락처 삭제 기능(함수 or 메쏘드)을 강제 종료하자
@@ -100,6 +101,7 @@ def remove_contact_by_position():
         
     ###### 연락처 객체로 변환..? 이 작업을 왜하는건지 이해못함
     ###### remove_contact.name으로 쓰려고 객체화한건가?
+    # >>>> 이유 : 깔끔하게 .name으로 표현하려고
     remove_contact = ContactInfo(infos[0], infos[1], infos[2])
     
     # 이 사람을 삭제하고 싶은 게 맞는지 확인받기
@@ -116,6 +118,8 @@ def remove_contact_by_position():
             # 읽기모드에서 가져온 연락처 정보(이름,번호,메모) str을 불러내보자
             
             ######## contact_list는 파일을 열때 만들었던 변수인데 아래서 끌어다 쓰기도 가능!?
+            # >>>>> 파이썬에서 만든 파일 내에서 만든 변수들은, 아래에서 끌어다 쓸 수 있음
+            
             for line in contact_list:
                 # line - '이름,번호,메모\n' 정보가 들어있을 예정
                 # remove_contact의 연락처를 불러낸 line이 포함하고 있는가? 맞으면 삭제(=추가 X)

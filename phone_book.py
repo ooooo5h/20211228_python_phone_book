@@ -85,6 +85,15 @@ def remove_contact_by_position():
         # readlines활용해서 한 줄씩 목록으로 받아오자
         contact_list = f.readlines()
         
+        # 범위를 벗어나는 위치를 입력해서 생긴 오류 => 해당 위치의 연락처는 없습니다. 라고 문구 띄우고, 메뉴로 돌려보내는 작업 추가
+        # 왜 len(contact_list) 인지 이해못했음
+        if position >= len(contact_list) or position < 0:
+            print('해당 위치의 연락처는 없습니다.')
+            # 연락처 삭제 기능(함수 or 메쏘드)을 강제 종료하자
+            # 어떻게? ---> return을 적어주면, 이 함수의 결과가 여기서 나온다고 마무리됨 그래서 아래 코드들은 실행되지 않음
+            return
+            
+        
         # 특정 위치의 연락처만 다루자 => 인덱스 활용
         target_contact = contact_list[position].strip()       
         infos = target_contact.split(',')

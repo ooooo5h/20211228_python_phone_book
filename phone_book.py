@@ -86,5 +86,10 @@ def remove_contact_by_position():
         contact_list = f.readlines()
         
         # 특정 위치의 연락처만 다루자 => 인덱스 활용
-        target_contact = contact_list[position]
-        print(target_contact)
+        target_contact = contact_list[position].strip()       
+        infos = target_contact.split(',')
+        
+        # 연락처 객체로 변환..? 이 작업을 왜하는건지 이해못함
+        remove_contact = ContactInfo(infos[0], infos[1], infos[2])
+        
+        # 이 사람을 삭제하고 싶은 게 맞는지 확인받기
